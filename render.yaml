@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: pgadmin4
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PGADMIN_DEFAULT_EMAIL
+        sync: false
+      - key: PGADMIN_DEFAULT_PASSWORD
+        sync: false
