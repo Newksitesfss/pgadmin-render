@@ -1,9 +1,12 @@
 services:
   - type: web
-    name: pgadmin4
+    name: pgadmin-render
     env: docker
     plan: free
-    autoDeploy: true
+    disk:
+      name: pgadmin-data
+      mountPath: /var/lib/pgadmin
+      sizeGB: 1
     envVars:
       - key: PGADMIN_DEFAULT_EMAIL
         sync: false
